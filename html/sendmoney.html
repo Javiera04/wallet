@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enviar dinero</title>
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--stylesheet-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!--Encabezado y barra de navegación-->
+    <header class="header">
+      <div class="container">
+        <nav class="navbar navbar-expand-lg">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="menu.html"><img style="width: 60px;" src="../assets/img/logo.jpg" alt=""></a>
+            <button class="navbar-toggler" type="button" style="background-color: white;" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item me-1">
+                  <a class="nav-link" href="menu.html">Home</a>
+                </li>
+                <li class="nav-item me-1">
+                  <a class="nav-link" href="deposit.html">Depositar</a>
+                </li>
+                <li class="nav-item me-1">
+                  <a class="nav-link active" aria-current="page" href="#">Transferir</a>
+                </li>
+                <li class="nav-item me-1">
+                  <a class="nav-link" href="transactions.html">Movimientos</a>
+                </li>
+                <li class="nav-item me-1">
+                  <a class="nav-link" href="#">Configuración</a>
+                </li>
+                <li class="nav-item me-1">
+                  <a class="nav-link" href="login.html">Salir</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>     
+    </header>
+    <!--contenido principal-->
+    <div class="container pt-3">
+      <div class="row">
+        <!--Formulaio de busqueda y nuevos contactos mitad izquierda-->
+        <div class="col-md-6">
+          <h2>Enviar Dinero</h2>
+          <!--Formulario de busqueda-->
+          <form role="search">
+            <div class="form-group" >
+              <label for="search">Buscar contacto</label>
+              <input class="form-control me-2" type="search" placeholder="Buscar" aria-label="Search" id="search">
+              <button type="submit" class="btn btn-light mt-2" id="searchBtn">Buscar</button>
+            </div>
+          </form>
+          <!--Formulario para agregar nuevos contactos-->
+          <form action=""> 
+            <div>
+              <button type="submit" class="btn btn-light mt-2" id="addForm">Agregar nuevo contacto</button>
+            </div>
+            <div id="contactForm" style="display: none;">
+              <div class="form-group mt-3">
+                <label for="fullName">Nombre completo: </label>
+                <input type="text" class="form-control" id="fullName">
+              </div>
+              <div class="form-group mt-2">
+                <label for="cbu">Número de cuenta: </label>
+                <input type="number"  class="form-control" id="cbu">
+              </div>
+              <div class="form-group mt-2">
+                <label for="alias">Alias: </label>
+                <input type="text"  class="form-control" id="alias">
+              </div>
+              <div class="form-group mt-2">
+                <label for="nmBanco">Nombre banco: </label>
+                <input type="text" class="form-control" id="nmBanco" >
+              </div>
+              <div>
+                <button type="submit" class="btn btn-light mt-3" id="btnCancelar">Cancelar</button>
+                <button type="submit" class="btn btn-light mt-3" id="btnAgregar" disabled>Agregar</button>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--Contactos y transferencias mitad derecha-->
+        <div class="col-md-6">
+          <h3 class="mt-2">Contactos</h3>
+          <ul class="list-group" id="contactList">
+            <li class="list-group-item">
+              <div class="contact-info">
+                <input class="form-check-input me-1 contactRadio" type="radio" name="listGroupRadio" value="" id="firstRadio">
+                <span class="contact-name">Francheska Briones</span>
+                <br>
+                <span class="contact-details">Nro de cuenta: 00598564, Alias: Fran, Banco: Bci-Nova</span>
+              </div>
+            </li>
+            <li class="list-group-item">
+              <div class="contact-info">
+                <input class="form-check-input me-1 contactRadio" type="radio" name="listGroupRadio" value="" id="secondRadio">
+                <span class="contact-name">Sebastian Silva</span>
+                <br>
+                <span class="contact-details">Nro de cuenta: 7798566425, Alias: Seba, Banco: Banco Falabella</span>
+               </div>
+            </li>
+            <li class="list-group-item">
+              <div class="contact-info">
+                <input class="form-check-input me-1 contactRadio" type="radio" name="listGroupRadio" value="" id="thirdRadio">
+                <span class="contact-name">Guadalupe Vidal</span>
+                <br>
+                <span class="contact-details">Nro de cuenta: 11111111, Alias: Lupe, Banco: Banco estado</span>
+              </div>
+            </li>
+          </ul>
+          <!--Formulario para realizar tansferencia-->
+          <form action="">
+            <div>
+              <button type="submit" class="btn btn-light mt-2" id="btnTransfer" disabled>Transferir</button>
+            </div>
+            <div id="transferForm" style="display: none;">
+              <div class="form-group mt-4">
+                <label for="amount">Monto a transferir:</label>
+                <input type="number" id="amount" class="form-control">
+              </div>      
+              <div class="form-group">
+                <button id="transferBtn" class="btn btn-light mt-4">Realizar transferencia</button>
+              </div>
+              <!--Alertas-->
+              <div id="exito" class="alert alert-success mt-3" role="alert" style="display: none;">
+                ¡Transferencia realizada con éxito!
+              </div>
+              <div id="fracaso" class="alert alert-danger mt-3" role="alert" style="display: none;">
+                Saldo insuficiente o monto inválido.
+              </div> 
+            </div>
+          </form>         
+        </div>
+      </div>              
+    </div>
+
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Scripts-->
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/newContact.js"></script>
+    <script src="../assets/js/deposit.js"></script>
+    <script src="../assets/js/sendMoney.js"></script> 
+    <script src="../assets/js/searchContact.js"></script>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>

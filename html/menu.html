@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú</title>
+    <!--bootstrap-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!--stylesheet-->
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <!--Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<body>
+    <!--Encabezado y barra de navegación-->
+    <header class="header">
+        <div class="container">
+          <nav class="navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="menu.html"><img style="width: 60px;" src="../assets/img/logo.jpg" alt="logo"></a>
+              <button class="navbar-toggler" type="button" style="background-color: white;" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item me-1">
+                    <a class="nav-link active" aria-current="page" href="#">Home</a>
+                  </li>
+                  <li class="nav-item me-1">
+                    <a class="nav-link" href="deposit.html">Depositar</a>
+                  </li>
+                  <li class="nav-item me-1">
+                    <a class="nav-link" href="sendmoney.html">Transferir</a>
+                  </li>
+                  <li class="nav-item me-1">
+                    <a class="nav-link" href="transactions.html">Movimientos</a>
+                  </li>
+                  <li class="nav-item me-1">
+                    <a class="nav-link" href="#">Configuración</a>
+                  </li>
+                  <li class="nav-item me-1">
+                    <a class="nav-link" href="login.html">Salir</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+        </div>     
+    </header>
+    <!--Contenido principal-->
+    <div class="container main-menu-container">
+      <div class="row justify-content-center">
+        <!--Carrusel mitad izquierda-->
+        <div class="col-md-6">
+          <div id="carouselExampleIndicators" class="carousel slide carousel-container">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>      
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../assets/img/dcto1.png" class="d-block w-100 img" alt="dscto-formacion">
+              </div>
+              <div class="carousel-item">
+                <img src="../assets/img/dcto2.png" class="d-block w-100 img" alt="dscto-super">
+              </div>
+              <div class="carousel-item">
+                <img src="../assets/img/dcto3.png" class="d-block w-100 img" alt="cashBack">
+              </div>
+              </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="visually-hidden">Next</span>
+                </button>
+              </div>
+        </div>
+        <!--Saldo y datos de la cuenta mitad derecha-->
+        <div class="col-md-6 pt-3 pl-4 saldo-container">
+          <h2 class="cuenta">Cuenta Alke 007589646</h2>
+          <div class="form-group">
+            <label for="saldo">Saldo disponible:</label>
+            <div>
+              <div style="display: inline-flex; font-size: 23px;">$<h2 id="balance">0</h2></div>
+            </div>
+          </div>
+          <!--botones de la pagina-->
+          <div class="mt-5 btnMenu">
+            <button class="btn btn-light" id="navDeposit">Depositar</button>
+            <button class="btn btn-light" id="navSendmoney">Transferir</button>
+            <button class="btn btn-light" id="navTransactions">Últimos movimientos</button>
+          </div>
+          <div id="alertDeposit" class="alert alert-success mt-3" role="alert" style="display: none;">
+            ¡Redirigiendo a Deposito!
+          </div>
+          <!--Alertas-->
+          <div id="alertSendMoney" class="alert alert-success mt-3" role="alert" style="display: none;">
+            ¡Redirigiendo a Transferir!
+          </div>
+          <div id="alertTransactions" class="alert alert-success mt-3" role="alert" style="display: none;">
+            ¡Redirigiendo a Movimientos!
+          </div>
+        </div>   
+      </div>
+    </div>
+      
+    <!--jQuery-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <!--Scripts-->
+    <script src="../assets/js/auth.js"></script>
+    <script src="../assets/js/index.js"></script>
+    <script src="..//assets/js/deposit.js"></script>
+    <!--Bootstrap-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>  
+</body>
+</html>
